@@ -368,7 +368,7 @@ namespace 方法
         public static void MY_Method()
         {
             Console.WriteLine("this is a method funtion hello erger are your here ?  now here what are your problem ");
-
+            Console.WriteLine("yes now we are successfully hihihi ");
 
         }
     }

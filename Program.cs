@@ -367,7 +367,7 @@ namespace 方法
         /// </summary>
         public static void MY_Method()
         {
-            Console.WriteLine("this is a method funtion hello erger are your here ?");
+            Console.WriteLine("this is a method funtion hello erger are your here ?  now here ");
 
 
         }

@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 /*
 
@@ -346,7 +347,9 @@ namespace 数组类型
 */
 
 
-using System.IO.Ports;
+
+
+/*
 
 
 namespace 方法
@@ -361,7 +364,11 @@ namespace 方法
             MY_Method(); //main同一个类调用
             program.MY_Method();//main不同类调用
 
+
+      
+
         }
+
         /// <summary>
         /// 方法调用
         /// </summary>
@@ -375,6 +382,180 @@ namespace 方法
     }
 }
 //77 6.40
+
+
+
+*/
+
+/*
+namespace 方法out
+{
+    class program
+    {
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("请输入你的用户名");
+            string  name = Console.ReadLine();
+            Console.WriteLine("请输入你的密码");
+            string pwd = Console.ReadLine();
+            string outmess;
+
+             bool key = IsLogin(name, pwd, out  outmess);
+            Console.WriteLine("登入结果: {0}",key);
+            Console.WriteLine("登入状态: {0}",outmess);
+
+        }
+
+
+        public static bool myTryParse(string s, out int result)
+        {
+            result = 0;
+            try
+            {
+                result = Convert.ToInt32(s);
+                return true;
+            }
+            catch 
+            {
+
+                return false;
+            }
+
+
+        }
+        /// <summary>
+        ///  判断登入是否成功
+        /// </summary>
+        /// <param name="name">用户名</param>
+        /// <param name="pwd">密码</param>
+        /// <param name="msg">多余返回的登入信息</param>
+        /// <returns>返回登入结果</returns>
+
+        public static bool IsLogin(string name ,string pwd , out string msg)
+        {
+            if(name == "murphy" && pwd == "123456")
+            {
+                msg = "登入成功";
+                return true;
+            }else if (name == "murphy")
+            {
+                msg = "密码错误";
+                     return false;
+            }
+            else if(pwd == "123456")
+            {
+                msg = "账号错误";
+                return false;
+            }else
+            {
+                msg = "账号和密码都有误";
+                return false;
+            }
+        }
+    }
+}
+
+*/
+
+
+
+/*
+namespace 方法ref
+{
+    class program
+    {
+
+        static void Main(string[] args)
+        {
+            int n1 = 10;
+            int n2 = 20;
+
+            test(ref n1, ref n2);
+            Console.WriteLine("n1 is {0}", n1);
+            Console.WriteLine("n2 is {0}", n2);
+        }
+        public static void test (ref int n1,ref int n2)
+        {
+
+            int temp = n1;
+            n1 = n2;
+            n2 = temp;
+            
+        }
+    
+    }
+}
+
+*/
+
+
+
+/*
+
+namespace 方法params
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            test("murphy", 48, 50, 50);
+        }
+
+        /// <summary>
+        /// 可变参数，但是类型要保持一致，params 一定要放到参数的最后面一个参数
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="score"></param>
+        public static void test(string name,params int[] score )
+        {
+            int sum = 0;
+
+            for (int i = 0; i < score.Length; i++)
+            {
+                sum+=score[i];
+            }
+            Console.WriteLine("{0}你这次考试的成绩是{1}",name,sum);  
+        }
+
+
+    }
+}
+
+//82 完
+*/
+
+
+
+
+namespace 方法params
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+           
+
+
+        }
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

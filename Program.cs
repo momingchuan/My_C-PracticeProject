@@ -346,7 +346,7 @@ namespace 数组类型
 */
 
 
-
+using System.IO.Ports;
 
 
 namespace 方法
@@ -367,6 +367,7 @@ namespace 方法
         /// </summary>
         public static void MY_Method()
         {
+            
             Console.WriteLine("this is a method funtion hello erger are your here ?  now here what are your problem ");
             Console.WriteLine("yes now we are successfully hihihi dwdwhjmj  hello gergrerrgre");
 

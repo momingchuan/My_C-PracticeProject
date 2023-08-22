@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
+using Microsoft.VisualBasic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 /*
@@ -526,28 +527,195 @@ namespace 方法params
 */
 
 
+/*
 
-
-namespace 方法params
+namespace 方法重载和方法递归
 {
     class program
     {
         static void Main(string[] args)
         {
-           
+            Console.WriteLine();
 
+            Console.WriteLine( M1(1, false));
+
+            MyRecursion();
 
         }
 
+        //方法的重载跟返回值没有关系，方法的使用相同分参数类型就不能相同的个数，
+       // 相同个数就， 不能相同的类型。
+       
 
+        public static int M1(int n1, int n2)
+        {
+            return n1 + n2;
 
+        }
+        public static int M1(int n1, bool n2)
+        {
+            if(n2)
+            {
+                return n1;
+            }
+            else
+            {
+                return 0;
+
+            }
+         
+        }
+
+        //方法递归
+       public static int i=0;
+        
+        public static void  MyRecursion()
+        {
+            Console.WriteLine("hi every one {0}",i);
+
+            if(i>5)
+            {
+
+                return;
+            }else
+            {
+                i++;
+            }
+            MyRecursion();
+        }
     }
 }
 
 
 
 
+*/
 
+namespace 飞行棋
+{
+    class program
+    {
+
+        static int[] Maps = new int[100];
+        static int[] playerLocation = new int[2];
+        static void Main(string[] args)
+        {
+            gameShow();
+            InitMap();
+            mapsShow();
+            Console.ReadKey();
+
+
+        }
+
+
+        public static void gameShow()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("********************************");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("********************************");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("********************************");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("***********飞行棋启动****V0.0***");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("*******莫明川制作 2023.8.22*****");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("********************************");
+        }
+
+        public static void InitMap()
+        {
+            int[] luckyturn = { 6, 23, 40, 55, 69, 83 };
+
+            for (int i = 0; i < luckyturn.Length; i++)
+            {
+                Maps[luckyturn[i]] = 1;
+            }
+            int[] landMine = { 5, 13, 17, 33, 38, 50, 64, 80, 95 };
+            for (int i = 0; i < landMine.Length; i++)
+            {
+                Maps[landMine[i]] = 2;
+            }
+            int[] pause = { 9, 27, 60, 93 };
+            for (int i = 0; i < pause.Length; i++)
+            {
+                Maps[pause[i]] = 3;
+            }
+            int[] timeTunnel = { 20, 25, 45, 63, 72, 88 };
+            for (int i = 0; i < timeTunnel.Length; i++)
+            {
+                Maps[timeTunnel[i]] = 4;
+            }
+
+
+        }
+
+        public static void mapsShow()
+        {
+
+            for (int i = 0; i < 30; i++)
+            {
+                if (playerLocation[0] == playerLocation[1] && playerLocation[0] == i)
+                {
+                    Console.Write("<>");
+                }
+                else if (playerLocation[0] == i)
+                {
+                    //shift + 空格  切换全角
+                    Console.Write("A");
+
+                }
+                else if (playerLocation[1] == i)
+                {
+                    Console.Write("B");
+                }
+                else
+                {
+                    switch (Maps[i])
+                    {
+                        case 0:
+                            {
+                                Console.Write("口");
+                            }
+
+                            break;
+                        case 1:
+                            {
+                                Console.Write("○");
+
+                            }
+
+                            break;
+                        case 2:
+                            {
+                                Console.Write("●");
+
+                            }
+                            break;
+                        case 3:
+                            {
+                                Console.Write("△");
+
+                            }
+                            break;
+                        case 4:
+                            {
+                                Console.Write("X");
+
+                            }
+                            break;
+                    }
+                }
+            }
+
+        }
+
+    }
+}
 
 
 

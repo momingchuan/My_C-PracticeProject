@@ -591,6 +591,8 @@ namespace 方法重载和方法递归
 
 */
 
+
+/*
 namespace 飞行棋
 {
     class program
@@ -717,8 +719,26 @@ namespace 飞行棋
     }
 }
 
+*/
 
 
+namespace 面向对象
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+
+
+        }
+
+
+
+ 
+
+      
+    }
+}
 
 
 

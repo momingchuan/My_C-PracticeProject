@@ -2,6 +2,7 @@
 
 
 using Microsoft.VisualBasic;
+using MY_C_practice;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 /*
@@ -722,12 +723,29 @@ namespace 飞行棋
 */
 
 
-namespace 面向对象
+//16分
+
+namespace 面向对象类
 {
     class program
     {
         static void Main(string[] args)
         {
+            //新建一个类
+            PersonClass murphy = new PersonClass();
+
+            murphy.Name = "发财";
+            murphy.age = -25;
+            murphy.gender = '单';
+
+            murphy.personFeature();
+
+
+            Console.ReadKey();
+
+
+
+
 
 
         }

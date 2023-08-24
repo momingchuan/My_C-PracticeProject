@@ -5,6 +5,7 @@ using Microsoft.VisualBasic;
 using MY_C_practice;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using static MY_C_practice.Person;
 /*
 
 namespace myProject
@@ -722,9 +723,9 @@ namespace 飞行棋
 
 */
 
-
+/*
 //16分
-
+//100完
 namespace 面向对象类
 {
     class program
@@ -733,35 +734,71 @@ namespace 面向对象类
         {
             //新建一个类
             PersonClass murphy = new PersonClass();
-
             murphy.Name = "发财";
             murphy.age = -25;
             murphy.gender = '单';
 
             murphy.personFeature();
-
-
             Console.ReadKey();
-
-
-
-
-
-
         }
-
-
-
- 
-
       
     }
 }
 
 
+*/
 
 
+/*
+namespace 静态和非静态的区别
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            Person  per = new Person();
+            //总结，静态成员必须使用类名去调用，而实例成员使用对象名调用
+            //静态函数中，只能访问静态成员，不允许访问实例成员。
+            //实例函数中，既可以使用静态成员，也可以使用实例成员。
+        
+            //静态类使用时机，当你把类当做一个“工具类”的时候就可以考虑使用静态类了。
+            //静态类在整个项目中资源是共享的。（堆、栈、静态存储区域）
 
+            //我是非静态的方法
+            per.M1();
+
+            //我是静态方法
+            Person.M2();
+   
+            Console.ReadKey();
+        }
+
+    }
+}
+
+*/
+
+namespace 构造函数
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+        
+            //创建对象的时候会执行构造函数
+            Person murphy = new Person("莫明川",25,'男',120);
+
+            murphy.outPerson();
+
+            Person Daming = new Person(20,"大明");
+
+            Daming.outPerson();
+
+            Console.ReadKey();
+        }
+
+    }
+}
 
 
 

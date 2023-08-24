@@ -129,6 +129,13 @@ namespace MY_C_practice
         private char _gender;
         private int _math;
 
+        //析构函数是程序在结束的时候才会执行，这个可以帮助我们释放资源
+        //名字要跟类名一样
+        ~Person()
+        { 
+            Console.WriteLine("this is end the code ");
+        }
+
         //构造函数的名字要和类的名字一样
         public Person(string name,int age,char gender,int math)
         {

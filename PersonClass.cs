@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
+#region MyRegion
+
+
 /*
 namespace MY_C_practice
 {
@@ -118,7 +122,7 @@ namespace MY_C_practice
 
 
 
-
+/*
 
 namespace MY_C_practice
 {
@@ -178,6 +182,30 @@ namespace MY_C_practice
     }
 
 }
+
+*/
+
+
+
+
+#endregion
+
+
+
+namespace MY_C_practice
+{
+    public class Person
+    {
+
+
+    }
+
+}
+
+
+
+
+
 
 
 

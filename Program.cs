@@ -6,6 +6,13 @@ using MY_C_practice;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using static MY_C_practice.Person;
+
+
+#region MyRegion
+
+
+
+
 /*
 
 namespace myProject
@@ -778,6 +785,8 @@ namespace 静态和非静态的区别
 
 */
 
+/*
+
 namespace 构造函数
 {
     class program
@@ -800,6 +809,29 @@ namespace 构造函数
     }
 }
 //106完
+
+*/
+#endregion
+
+
+//109完
+
+namespace 命名空间
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+
+
+            //快捷键 是alt+shif+F10
+            
+
+            Console.ReadKey();
+        }
+
+    }
+}
 
 
 

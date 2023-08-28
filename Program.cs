@@ -5,6 +5,8 @@ using Microsoft.VisualBasic;
 using MY_C_practice;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Xml.Serialization;
 using static MY_C_practice.Person;
 
 
@@ -815,7 +817,7 @@ namespace 构造函数
 
 
 //109完
-
+/*
 namespace 命名空间
 {
     class program
@@ -825,7 +827,7 @@ namespace 命名空间
 
 
             //快捷键 是alt+shif+F10
-            
+            //快速提示 应用命名空间
 
             Console.ReadKey();
         }
@@ -833,7 +835,531 @@ namespace 命名空间
     }
 }
 
+*/
 
+
+
+
+#region MyRegion
+
+
+
+//namespace 值类型和引用类型
+//{
+//    class program
+//    {
+//        static void Main(string[] args)
+//        {
+//区别
+//值类型和引用类型在内存上存储的地方不一样。
+//在传递值类型和传递引用类型的时候，传递的方式不一样。
+//值类型：int、 double 、bool 、char、 decimal 、struct、 enum 
+//引用类型：string 、自定义类、数组
+//值类型的值是存储在内存的栈当中。
+//引用类型的是存储在内存的堆当中。
+
+//字符串是不可变性，
+
+//string ss = "abcdfg";
+////要想把里面的b改成a,要进行转换
+//char[] charS = ss.ToCharArray();
+
+//charS[1] = 'a';
+
+////数组转字符串
+
+//ss = new string(charS);
+
+//Console.WriteLine(ss);
+//Console.WriteLine(charS);
+
+//如果你要对字符串大量的修改的时候，得用StringBuilder（）这个对象。
+//要是用string字符串的话是花很长的时间。
+//StringBuilder（） 完成了在把他\
+
+//StringBuilder sb = new StringBuilder();
+
+//string  str=null;
+
+//Stopwatch sw = new Stopwatch(); 
+
+
+//创建一个计时器，用来记录运行时间
+//sw.Start();
+
+//for (int i = 0; i < 100000; i++)
+//{
+//    //str += i;
+//    sb.Append(i);
+//}
+//sw.Stop();
+
+
+//一切类型都是使用 ToString 转换成字符串类型
+//Console.WriteLine(sb.ToString());   
+//Console.WriteLine(sw.Elapsed);
+//Console.WriteLine(sb);
+
+//str = sb.ToString();
+//Console.WriteLine("当前的字符串长度为{0}",str.Length);
+
+/*
+    #region MyRegion
+
+        string myStr = "fwefwe565rwg";
+        //字符串转换为大写
+        Console.WriteLine(myStr.ToUpper());
+        myStr = "AFWGERHETH";
+
+        //转小写
+        Console.WriteLine(myStr.ToLower());
+
+        string mystr2 = "aFWGERHETH";
+
+        if(myStr.Equals(mystr2,StringComparison.OrdinalIgnoreCase))
+        {
+            Console.WriteLine("你们字符串是相同的");
+
+        }else
+        {
+            Console.WriteLine("你们的字符串是不相同的");
+        }
+
+    #endregion
+*/
+
+/*
+#region MyRegion
+
+//字符串分割
+
+string s = "f+.-49922-/,,`024356&^$%#80-   ef  ][hthl";
+
+//要去掉的字符
+char[] spli = {'+', ',', ' ' };
+
+char[] afwwf = { '+', ',', ' ' };
+
+//第一种方法。
+string[] arrayRESULT =  s.Split(spli,StringSplitOptions.RemoveEmptyEntries);
+
+//第二种方法是直接定义后传参。
+arrayRESULT = s.Split(new char[] { '.'}, StringSplitOptions.RemoveEmptyEntries);
+
+Console.WriteLine(arrayRESULT);
+
+#endregion
+*/
+
+
+//#region MyRegion
+
+
+/*
+
+
+//字符串 包含和替换
+string str = "国家关键人物 啊莫";
+
+if (str.Contains("啊莫"))
+{
+    //字符串替换
+  Console.WriteLine(  str.Replace("啊莫", "**"));
+}else
+{
+    Console.WriteLine(str);
+}
+
+
+//字符串 索引 放回下标值
+
+Console.WriteLine("查找的字符串下标是 {0}",str.IndexOf("啊",2));
+
+//字符串截取
+
+Console.WriteLine( str.Substring(7,2));
+
+
+
+//提取最后一个字符串
+
+string path = @"c:\dw\dw莫\wg\gr老师\erg\莫老师.wav";
+
+//两个斜杠是表示一个斜杠，搜索最后一个斜杠并且返回下标
+
+int index = path.LastIndexOf("\\");
+
+path = path.Substring(index+1);
+
+
+Console.WriteLine(path);
+
+
+//去空格
+
+Console.WriteLine("当前去除的空格字符串 \"{0}\"",str.Trim() ) ;
+
+//判断字符串是否为空
+if (string.IsNullOrEmpty(str))
+{
+
+    Console.WriteLine("是为空");
+}else
+{
+
+    Console.WriteLine("不是为空") ;
+}
+//字符串加入
+
+string[] names = { "张三","李四","大名","电测" };
+
+
+string strword = string.Join("|", names);
+
+Console.WriteLine("当前加入的字符串为,{0}", strword);
+//*/
+//#endregion
+
+
+//#region MyRegion
+///*
+
+////string path = @"C:\Users\murphy\Desktop\新建文本文档.txt";
+//////文件操作
+//string [] contents =  File.ReadAllLines(path,Encoding.Default);
+
+////打印出文件数据
+//for (int i = 0; i < contents.Length; i++)
+//{
+//    Console.WriteLine(contents[i]);
+//}
+
+
+
+
+//string str = "hello**c#**sharp";
+////字符串分割
+
+//string[] resultStr = str.Split('*');
+
+//for (int i = 0; i < resultStr.Length; i++)
+//{
+//    Console.WriteLine(resultStr[i]);   
+//}
+
+//#endregion
+
+
+//*/
+
+
+//            Console.ReadKey();
+//        }
+
+//    }
+//}
+
+
+#endregion
+
+
+/*
+namespace 继承
+{
+
+//new 的用法，1、创建对象，2、隐藏从父类继承过来的同名成员，隐藏的后果是子类用不到父类的成员
+
+    //我们可能在一个类中使用一些重复的成员，这些成员可以写成一个类，叫做父类
+    //然后子类都可以使用父类的东西
+    //类的特性：
+    //1、继承的单根性：子类继承了父类的属性和方法，但是子类没有继承父类的私有字段
+    //2、继承的传递性：
+
+    class program
+    {
+        static void Main(string[] args)
+        {
+            student murphy = new student("murphy",24,'男',631001833);
+            Teacher Daming = new Teacher("cady", 24, '女', 20000);
+
+            murphy.studentOut();
+            Daming.teacherOut();
+
+            Console.ReadKey();
+        }
+    }
+
+
+    //声明一个父类，放公共的字段数据
+    public class human
+    {
+
+        //声明构造函数
+        public human(string name, int age, char gender)
+        {
+            this.Name = name;
+            this.Age = age;
+            this.Gender = gender;
+        }
+
+        private  string _name;
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        private int _age;
+
+        public int Age
+        {
+            get { return _age; }
+            set { _age = value; }
+        }
+
+        private char _Gender;
+        public char Gender
+        {
+            get { return _Gender; }
+            set { _Gender = value; }
+        }
+
+        public void com()
+        {
+            Console.WriteLine("我是一个人类");
+        }
+
+    }
+
+    //子类继承父类的东西
+    public class student: human
+    {
+         private static int _ID;
+     
+        //声明构造函数
+        //子类要调用父类的有参数的构造函数，
+        //这个是调用了父类的构造函数，父类的就不用重新赋值了，剩余的参数要赋值
+        public student(string name, int age, char gender, int id) : base(name, age, gender)
+        {
+            this.ID = id;
+        }
+       
+        public int ID
+        {
+            get { return _ID; } 
+             set { _ID = value; }
+        }
+        public  void studentOut()
+        {
+           
+            Console.WriteLine("我是一个学生类,我的名字是 {0}，" +
+                "我的年龄是 {1},我的学号是 {2}，我的性别是 {3}", this.Name,this.Age,this.ID,this.Gender);
+
+        }
+
+    }
+    //子类继承父类的东西
+    public class Teacher: human
+    {
+
+        public Teacher(string name, int age, char gender, int salary) : base(name, age, gender)
+        {
+            this.Salary = salary;
+        }
+
+        private static int _Salary;
+        public int Salary
+        {
+            get { return _Salary; }
+            set { _Salary = value; }
+        }
+        
+        public void teacherOut()
+        {
+            Console.WriteLine("我是一个老师类，我的名字是 {0}， 我的年龄是 {1}" +
+                "我的性别是 {2}，我的薪水是 {3}",this.Name,this.Age,this.Gender,this.Salary);
+        }
+        
+       
+    }
+    //子类继承父类的东西
+    public class Driver: human
+    {
+        public Driver(string name, int age, char gender, int driverTime) : base(name, age, gender)
+        {
+            this.DriverTime = driverTime;
+        }
+        private int _DriverTime;
+
+        public int DriverTime
+        {
+
+            get { return _DriverTime; }
+            set { _DriverTime = value; }    
+
+        }
+        public void DriverOut()
+        {
+            Console.WriteLine("我是一个司机类");
+
+        }
+
+    }
+}
+
+//19分
+
+
+*/
+//11
+
+namespace  里氏传换
+{
+
+    //1、子类可以赋值给父类，如果有一个地方需要一个父类作为参数，我们可以给一个子类代替
+    //2、如果父类中装的是子类对象，那么可以讲这个父类抢转为子类对象
+    //3、
+    public class main
+    {
+
+        static void Main(string[] args)
+        {
+
+
+            #region MyRegion
+
+                //person p = new student();
+
+                //is  是 如果p是teacher 则返回一个 true，否者就返回 false
+
+                //if(p is teacher)
+                //{
+                //    //因为p 装的是Student ， student 和 teacher 他们没有关系
+                //    teacher ss = (teacher)p;
+                //    ss.teacherMethod();
+                //}else 
+                //{
+                //    Console.WriteLine("conversion fail ");
+                //}
+
+
+
+                //方法2 
+                //as ，是如果是转换成功则返回转换的对象，不行则返回null
+                //teacher t = p as teacher;
+
+                //student t1 = p as student;
+
+                //t1.studentMethod();
+
+                //string str =  string.Join("|", new string[] { "1", "2", "3", "4" });
+
+                // Console.WriteLine(str);
+
+
+            #endregion
+
+
+
+            //student s = new student();
+            //person p = new person();
+            //teacher t = new teacher();
+
+
+            person[] pers = new person[10];
+
+            //新建一个随机数
+
+            Random rr = new Random();
+
+            for (int i = 0; i < pers.Length; i++)
+            {
+
+                int number = rr.Next(1, 3);
+
+                switch (number)
+                {
+                    case 1:
+                        pers[i] = new person();
+                        break;
+                    case 2:
+                        pers[i] = new student();
+                        break;
+                    case 3:
+                        pers[i] = new teacher();
+                        break;
+                    default:
+
+                        break;
+                }
+            }
+
+
+
+
+
+            for (int i = 0; i < pers.Length; i++)
+            {
+                if (pers[i] is student)
+                {
+                    ((student)pers[i]).studentMethod();
+                }
+                else if (pers[i] is teacher)
+                {
+                    ((teacher)pers[i]).teacherMethod();
+                }
+                else if (pers[i] is person)
+                {
+                    ((person)pers[i]).personMethod();
+                }
+            }
+        
+
+
+
+
+
+    }
+
+    }
+
+
+
+
+
+    public class person
+    {
+
+        public void personMethod()
+        {
+            Console.WriteLine("I am s person");
+            
+        }
+    }
+
+    public class  student:person
+    {
+        public void studentMethod()
+        {
+
+            Console.WriteLine("I am a student ");
+        }
+        
+
+    }
+
+    public class teacher:person
+    {
+        public void teacherMethod()
+        {
+
+            Console.WriteLine("I am a teacher");
+        }
+
+
+
+    }
+}
 
 
 

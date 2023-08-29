@@ -1,13 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
-using Microsoft.VisualBasic;
-using MY_C_practice;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Xml.Serialization;
-using static MY_C_practice.Person;
 
 
 #region MyRegion
@@ -1022,7 +1015,6 @@ Console.WriteLine("当前加入的字符串为,{0}", strword);
 
 
 //#region MyRegion
-///*
 
 ////string path = @"C:\Users\murphy\Desktop\新建文本文档.txt";
 //////文件操作
@@ -1213,6 +1205,8 @@ namespace 继承
 */
 //11
 
+
+/*
 namespace  里氏传换
 {
 
@@ -1362,4 +1356,209 @@ namespace  里氏传换
 }
 
 
+*/
+
+
+
+/*
+
+
+namespace protected访问修饰符
+{
+
+
+    //有protected 的修饰符 在子类里可以访问父类的private 的成员变量
+
+    class program
+    {
+        static void Main(string[] args)
+        {
+
+            person p = new person();
+                p.Name = "murphy";
+            p.test();
+
+
+        }
+        
+
+        class student
+        {
+            protected string _Name;
+
+            
+        }
+
+        class person :student
+        {
+            public string Name
+            {
+                
+                get { return _Name; } 
+                set { _Name = value; }
+            }
+
+            public void test()
+            {
+                //_Name = "murphy";
+                Console.WriteLine(Name);
+            }
+
+
+        }
+    }
+}
+
+
+
+*/
+
+
+
+
+//using System.Collections;
+
+
+/*
+namespace 集合arratlist方法一
+{
+    class program
+    {
+        static void Main(string[] arge)
+        {
+            //创建集合对象
+            //集合的好处，长度可以任意改变，类型随便
+            ArrayList list = new ArrayList();
+
+            list.Add(1151);
+            list.Add("murphy");
+            list.Add(true);
+            list.Add(5000m);
+            list.Add(34.185446);
+            list.Add(new int[] { 2645, 784, 345, 147, 1, 8 });
+            person p = new person();
+            list.Add(p);
+            list.Add(list);
+
+            for (int i = 0; i < list.Count; i++)
+            {
+
+                if (list[i] is person)
+                {
+
+                    ((person)list[i]).personMethod();
+                }
+                else if (list[i] is int[])
+                {
+                    for (int j = 0; j < ((int[])list[i]).Length; j++)
+                    {
+                        Console.WriteLine(((int[])list[i])[j]);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(list[i]);
+                }
+            }
+        }
+    }
+    class person
+    {
+        public void personMethod()
+        {
+            Console.WriteLine("我是一个人类");
+        }
+    }
+}
+
+*/
+
+
+
+
+
+using System.Collections;
+///*
+///
+namespace 集合arratlist方法一
+{
+
+    class program
+    {
+
+        static void Main(string[] arge)
+        {
+
+            //创建集合对象
+            //集合的好处，长度可以任意改变，类型随便
+            ArrayList list = new ArrayList();
+
+
+            
+
+            list.Add(1151);
+            list.Add("murphy");
+            list.Add(true);
+            list.Add(5000m);
+            list.Add(34.185446);
+            list.AddRange(new int[] { 2645, 784, 345, 147, 1, 8 });
+
+            person p = new person();
+            //list.Add(p);
+            list.AddRange(list);
+
+
+            //清除集合元素
+            //list.Clear();
+            list.Remove(true);//写谁就删除谁
+            list.RemoveAt(2);//索引删除
+            list.RemoveRange(0, 3);//索引删除范围
+
+            //list.Sort();//升序排列
+            list.Reverse();//反转
+            list.Insert(2, "comeDatain");
+            list.InsertRange(0, new string[] { "dwdw", "445wfwef" });
+
+            if(list.Contains("dwdw"))
+            {
+                Console.WriteLine("有包含在里面");
+
+            }
+
+            //如果count的个数超过了Capacity个数，Capacity就会增加一赔的个数
+            Console.WriteLine("列表属性{0}",list.Capacity);
+            Console.WriteLine("列表属性{0}",list.Count);
+
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine(list[i]);
+            }
+
+            ArrayList secondList = new ArrayList();
+
+            secondList.AddRange(new int[] { 1, 8, 99, 54, 5, 2, });
+
+            int sum=0;
+              
+
+            for (int i = 0; i < secondList.Count; i++)
+            {
+                sum += (int)secondList[i];  //强制转换
+            }
+            Console.WriteLine("total is {0}",sum);
+
+        }
+    }
+
+    class person
+    {
+
+        public void personMethod()
+        {
+
+            Console.WriteLine("我是一个人类");
+        }
+    }
+}
 

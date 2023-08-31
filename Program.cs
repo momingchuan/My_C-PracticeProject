@@ -1477,9 +1477,11 @@ namespace 集合arratlist方法一
 
 
 
+
+/*
 using System.Collections;
-///*
-///
+
+
 namespace 集合arratlist方法一
 {
 
@@ -1562,3 +1564,180 @@ namespace 集合arratlist方法一
     }
 }
 
+
+*/
+
+
+/*
+
+
+using System.Collections;
+
+namespace Hashtable集合
+{
+
+    class program
+    {
+
+        static void Main(string[] arge)
+        {
+
+
+            //var 的使用,
+            //C#是一门强类型语言，在代码当中，必须对每个变量的类型有一个明确的定义。
+
+            //int n1 = 0;
+            //string n2 = "hello";
+            //double n3 = 3.14;
+            //decimal n4 = 100000m;
+            //bool n5 = true;
+            //char n6 = 'a';
+
+            //var n1 = 0;
+            //var n2 = "hello";
+            //var n3 = 3.14;
+            //var n4 = 100000m;
+            //var n5 = true;
+            //var n6 = 'a';
+
+
+            //Console.WriteLine(n1.GetType());
+            //Console.WriteLine(n2.GetType());
+            //Console.WriteLine(n3.GetType());
+            //Console.WriteLine(n4.GetType());
+            //Console.WriteLine(n5.GetType());
+            //Console.WriteLine(n6.GetType());
+
+
+
+            //创建一个键值集合对象
+
+            //键值是唯一的，值可以重复的
+
+            Hashtable ht = new Hashtable();
+
+            ht.Add(1, "唐老鸭");
+            ht.Add(2, true);
+            ht.Add(3, '男');
+            ht.Add(false, "错误的");
+            ht[true] = true; 
+
+            //通过索引去赋值数据
+            ht[3] = "dwd";
+
+            //移除
+            ht.Remove(2);
+
+            foreach (var s in ht.Keys)
+            {
+
+                Console.WriteLine("键值是  {0},  值是  {1}", s, ht[s]);
+
+            }
+
+        }
+    }
+}
+
+
+*/
+
+
+
+/*
+namespace path类
+{
+
+    class program
+    {
+
+        
+        static void Main(string []arg)
+        {
+
+            //快速获得一个路径字符串的名字
+            string str = @"C:\soft\red\data\murphy.wav";
+
+            string outStr = Path.GetFileName(str);
+
+            Console.WriteLine(outStr);
+            //拿到文件的名字，不包括扩展名
+
+            outStr = Path.GetExtension(str);
+
+            Console.WriteLine(outStr);
+
+            //拿到文件夹
+
+            outStr = Path.GetDirectoryName(str);
+
+            Console.WriteLine(outStr);
+
+            //获取全部路径
+
+            outStr = Path.GetFullPath(str);
+
+            Console.WriteLine(outStr);
+
+
+            //两个路径连接在一起
+
+            outStr = Path.Combine(@"C:\dww\fe", "abc.c");
+
+            Console.WriteLine(outStr);
+
+        }
+
+    }
+}
+
+
+*/
+
+
+//131完，
+using System.Text;
+
+namespace File类
+{
+
+    class program
+    {
+
+        static void Main(string[] arg)
+        {
+            string myPath = @"C:\\Users\\murphy\\Desktop\\myFile.c";
+            string myPath2 = @"C:\\Users\\murphy\\Desktop\\myFile2.c";
+            //创建一个文件，
+            //File.Create(myPath);
+            //Console.WriteLine("创建成功");
+
+            //File.Delete(myPath);
+            //Console.WriteLine("删除成功");
+
+            //复制一个文件
+
+            //File.Copy(myPath, myPath2);
+
+            //编码格式
+
+            //UTF  GB2312   ASCLL  Unicode 
+
+
+
+            string str = "today is nice day, perfect";
+            
+
+            File.WriteAllText(myPath, str);
+
+            byte[] buffer = File.ReadAllBytes(myPath);
+
+            string s = Encoding.UTF8.GetString(buffer);
+
+            Console.WriteLine(s);
+
+
+
+        }
+    }
+}
